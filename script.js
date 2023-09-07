@@ -4,7 +4,7 @@ let tr1= document.createElement("tr")
 let td1= document.createElement("td")
 let td2= document.createElement("td")
 td1.setAttribute("colspan","2")
-td1.innerText="Loading...."
+td1.innerText="loading...."
 tr1.appendChild(td1);
 tdata.appendChild(tr1)
 
