@@ -43,29 +43,29 @@ tdata.appendChild(tr1)
 //   new Promise((resolve,reject) => setTimeout(() => resolve("Promise 3"), 2000),
 // ];
 const promises = [
-  new Promise((resolve) => setTimeout(() => resolve("Promise 1"), 2)),
-  new Promise((resolve) => setTimeout(() => resolve("Promise 2"), )),
-  new Promise((resolve) => setTimeout(() => resolve("Promise 3"),3000  )),
-];
+  new Promise((resolve) => setTimeout(() => resolve("2"), 2000)),
+  new Promise((resolve) => setTimeout(() => resolve("1"), 1000)),
+  new Promise((resolve) => setTimeout(() => resolve("3"), 3000  )),
+]
 
-Promise.any(promises)
+Promise.all(promises)
 .then((data)=>{
 	tr1.remove()
 	// tdata.innerText = data
-	//console.log(data);
-	// let i=1
-	// // data.forEach((element)=>{
+	console.log(data);
+	let i=1
+	 data.forEach((element)=>{
 	let row1=document.createElement("tr")
 	let col11=document.createElement("td")
 	let col12=document.createElement("td")
 
-	col11.innerText= data
-	// col12.innerText=
+	col11.innerText= `Promise ${i}`
+	 col12.innerText= element
 	
 	row1.append(col11,col12)
 	tdata.appendChild(row1)
-	// 	i++
-	// })
+		i++
+	})
 
 	
 	
